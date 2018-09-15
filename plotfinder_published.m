@@ -3,8 +3,7 @@
 %Script by Alexander Susko
 
 %script to read in image, field plot dimensions, field plot design, and
-%output images of the plots from a hemispherical image or video. Contains
-%advanced roll and pitch correction
+%output images of the plots from a hemispherical image or video. 
 
 %% Section 1: Image thresholding to ID red square
 
