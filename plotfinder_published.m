@@ -20,7 +20,7 @@ redsquare = redmask(image);
 %find square structuring elements in the mask.  4 pixel square structuring
 %element
 sesquare = strel('square', 4);
-redstrel = imopen(redsquare, sesquare);
+redstrel = imclose(redsquare, sesquare);
 
 %Pull out red structuring element in the middle of image. Check these
 %carefully, might do it by area instead.
