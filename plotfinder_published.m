@@ -27,6 +27,13 @@ redstrel = imopen(redsquare, sesquare);
 redstrel(:,(1:1200))=0;
 redstrel(:,(1600:2880))=0;
 
+%red square is approximately 6000 pixels in area. Set 5000 as smallest
+%acceptable area for structuring elements
+smallestAcceptableArea = 5000; 
+
+%Remove any smaller objects that happen to match the redmasking threshold.  Note: bwareaopen returns a logical.
+redstrel = (bwareaopen(redstrel, smallestAcceptableArea));
+
 %% Section 2: Get the indices from red square to calculate rotation angle
 %Determine rotation based on x axis (NS) from the inverse tan of the length
 %of column indices over the length of row indices
